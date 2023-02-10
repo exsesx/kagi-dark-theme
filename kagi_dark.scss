@@ -1,0 +1,137 @@
+$border-radius: 12px;
+$background-color: #202124;
+$accent-color: rgba(255, 255, 255, 0.1);
+
+.theme_moon_dark {
+  --background-color: #202124;
+  --header-bg: var(--background-color);
+  --control-center-bg: var(--background-color);
+  --filter-dd-bg: var(--background-color);
+
+  --result-item-title-border: var(--background-color);
+  --result-item-title-visited-border: var(--background-color);
+  --result-item-title-border_hover: var(--search-result-title);
+
+  --search-result-date-bg: rgba(255, 255, 255, 0.15);
+  --search-result-date-new-bg: rgba(255, 255, 255, 0.15);
+
+  --cheatsh_background: #{$accent-color};
+  --kagi-accent: #{$accent-color};
+  --tabs-round-bg: #{$accent-color};
+  --dd-hover-bg: #{$accent-color};
+  --inline-widget-bg: #{$accent-color};
+  --dd-list-input-bg: #{$accent-color};
+  --control-center-dd-list-bg_hover: #{$accent-color};
+  --related-item-bg: #{$accent-color};
+  --btn-group-bg: #{$accent-color};
+  --video-item-bg: #{$accent-color};
+
+  --search-result-title: #8ab4f8;
+  --color_link: var(--search-result-title);
+  //--color-primary_hover: rgba(255, 255, 255, 0.85);
+  --color-primary_visited: #c58af9;
+  --search-result-title-hover: var(--search-result-title);
+  --color-primary_hover: var(--search-result-title-hover);
+  --footer-bg: #171717;
+  --m_sri_gap_color: var(--background-color);
+
+  --site_info_bottom_bg: transparent;
+  --site_info_bg: var(--background-color);
+
+  --search-result-gap: 32px;
+
+  ._0_more_search_box {
+    border-radius: inherit;
+  }
+
+  ._0_more_search_user_bangs_list {
+    padding-bottom: 0;
+  }
+
+  ._0_more_search_box_share_button {
+    margin-bottom: 0;
+  }
+
+  .k_ui_dropdown_data_list {
+    padding: 0;
+    border-radius: $border-radius;
+    top: 28px !important;
+
+    .list_items {
+      border-radius: $border-radius;
+      margin-bottom: 0;
+
+      & > a {
+        padding: 6px 25px !important;
+        border-radius: 0;
+
+        &:hover {
+          border-radius: unset !important;
+        }
+      }
+    }
+
+    hr {
+      margin: 0;
+    }
+  }
+
+  .box:hover {
+    outline: 2px solid var(--color-primary_hover);
+  }
+
+  .videoResultItem, ._0_img-results .item, .newsResultItem .newsResultBody .newsResultImage img {
+    border-radius: $border-radius;
+  }
+
+  ._0_img-results .item .imageInfo > div.b {
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.6) 0, rgba(0, 0, 0, 0) 100%);
+  }
+
+  ._0_img-results .item .imageInfo > div.t {
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .6) 100%);
+  }
+
+  .clipboardCopy ._0_copied_tooltip {
+    background-color: rgba(13, 13, 14, 0.9);
+  }
+
+  ._0_queryInfo {
+    padding: 0;
+  }
+
+  .sri-group .__dl {
+    padding-bottom: 0;
+  }
+
+  ._0_img-results .item img {
+    object-fit: cover;
+  }
+
+  .main-footer {
+    padding-bottom: 2rem;
+  }
+
+  // yeah, they got typo...
+  ._0_page-seperator {
+    border-bottom: 1px dashed var(--color-primary-dim_1);
+  }
+
+  .related-searches:empty {
+    margin-top: 30px;
+  }
+
+  //  improvements UI/UX (not necessarily to add)
+
+  .widgetItems {
+    overflow: visible;
+
+    .widgetItem {
+      transition-property: all;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
