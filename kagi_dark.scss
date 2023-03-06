@@ -182,4 +182,13 @@ $footer-bg: #1e2028;
   .correctedQuery a {
     color: var(--search-result-title);
   }
+
+  .__srgi-title a:visited:hover {
+    border-bottom: 1px solid var(--color-primary_visited);
+  }
+
+  .__sri-title .__sri_title_link:visited:hover {
+    color: var(--color-primary_visited);
+    border-bottom: 1px solid var(--color-primary_visited)
+  }
 }
