@@ -12,7 +12,6 @@ $header-bg: #1a1c23;
 $widget-bg: #1e2028;
 $footer-bg: #1e2028;
 
-// Wants some fonts?
 // body,
 // html,
 // * {
@@ -107,17 +106,17 @@ $footer-bg: #1e2028;
 
   ._0_img-results .item .imageInfo > div.b {
     background: linear-gradient(
-                    360deg,
-                    rgba(0, 0, 0, 0.6) 0,
-                    rgba(0, 0, 0, 0) 100%
+      360deg,
+      rgba(0, 0, 0, 0.6) 0,
+      rgba(0, 0, 0, 0) 100%
     );
   }
 
   ._0_img-results .item .imageInfo > div.t {
     background: linear-gradient(
-                    360deg,
-                    rgba(0, 0, 0, 0) 0,
-                    rgba(0, 0, 0, 0.6) 100%
+      360deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.6) 100%
     );
   }
 
@@ -170,7 +169,8 @@ $footer-bg: #1e2028;
   }
 
   .auto_suggestions .auto_suggestions_lenses {
-    border-top: none;
+    border-top: 1px solid var(--color-primary-dim_3);
+    margin-top: 0;
   }
 
   // justify-content: space-between; makes spacing a little bit off...
@@ -189,6 +189,6 @@ $footer-bg: #1e2028;
 
   .__sri-title .__sri_title_link:visited:hover {
     color: var(--color-primary_visited);
-    border-bottom: 1px solid var(--color-primary_visited)
+    border-bottom: 1px solid var(--color-primary_visited);
   }
 }
