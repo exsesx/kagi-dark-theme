@@ -221,3 +221,53 @@ $footer-bg: #1e2028;
   --m_sri_gap_color: var(--background-color);
   --quick-search-bg: var(--color-primary-dim_6);
 }
+
+// Dark Mode Discuss with AI Page
+html[data-path="/discussdoc"] {
+  color-scheme: dark;
+
+  // override variables
+  --background-color: #{$background-color};
+  --color-primary: rgb(255, 255, 255);
+  --color-primary-dim_5: rgba(255, 255, 255, 0.5);
+
+  // custom variables
+  $color-accent: #58a6ff;
+
+  --ai_chat_buble_q_bg: #{darken($color-accent, 20%)};
+  --ai_chat_buble_q_text: var(--color-primary);
+  --ai_chat_buble_a_bg: #{$widget-bg};
+  --ai_chat_buble_a_text: var(--color-primary);
+  --ai_chat_input_text: var(--color-primary);
+  --ai_chat_input_button: var(--color-primary-dim_5);
+
+  .closeBtn {
+    background: rgb(229, 229, 229); // primary
+    color: rgb(25, 25, 25); // secondary
+  }
+
+  .question_form_box {
+    padding: 0;
+    margin: 0;
+
+    ._0_ai_answer_wrapper {
+      padding: 20px;
+      max-height: calc(100% - 101px);
+      overflow: auto;
+    }
+
+    .q_form_wrapper {
+      padding: 15px 40px;
+      border-top: 1px solid #{$footer-bg};
+    }
+
+    ._0_q_form_box {
+      padding: 0 3px;
+      background-color: #{$widget-bg};
+    }
+
+    ._0_ai_answers_box {
+      padding: 0;
+    }
+  }
+}
