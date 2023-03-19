@@ -13,50 +13,9 @@ $header-bg: #1a1c23;
 $widget-bg: #1e2028;
 $footer-bg: #1e2028;
 
-.theme_moon_dark {
-  --background-color: #{$background-color};
-  --footer-bg: #{$footer-bg};
-  --header-bg: #{$header-bg};
-  --control-center-bg: var(--background-color);
-  --filter-dd-bg: var(--background-color);
-  --not-found-bubble-bg: var(--footer-bg);
-
-  --result-item-title-border: var(--background-color);
-  --result-item-title-visited-border: var(--background-color);
-  --result-item-title-border_hover: var(--search-result-title);
-
-  --search-result-date-bg: rgba(255, 255, 255, 0.15);
-  --search-result-date-new-bg: rgba(255, 255, 255, 0.15);
-
-  --cheatsh_background: #{$accent-color};
-  --kagi-accent: #{$accent-color};
-  --tabs-round-bg: #{$accent-color};
-  --dd-hover-bg: #{$accent-color};
-  --inline-widget-bg: #{$widget-bg};
-  --dd-list-input-bg: #{$accent-color};
-  --control-center-dd-list-bg_hover: #{$accent-color};
-  --related-item-bg: #{$accent-color};
-  --btn-group-bg: #{$accent-color};
-  --video-item-bg: #{$accent-color};
-
-  // TODO: work more on colors
-  // doesn't work, though
-  --ai_chat_buble_a_bg: var(--inline-widget-bg); // AI
-  --ai_chat_buble_q_bg: var(--inline-widget-bg); // You
-
-  --search-result-title: #8ab4f8;
-  --color_link: var(--search-result-title);
-  --color-primary_visited: #c58af9;
-  --search-result-title-hover: var(--search-result-title);
-  --color-primary_hover: var(--search-result-title-hover);
-  --m_sri_gap_color: var(--background-color);
-
-  --site_info_bottom_bg: transparent;
-  --site_info_bg: var(--background-color);
-
+// Common Styles for All Themes
+:root {
   --search-result-gap: 32px;
-
-  --btn-primary-color: var(--inline-widget-bg);
 
   ._0_more_search_box {
     border-radius: inherit;
@@ -94,10 +53,6 @@ $footer-bg: #1e2028;
     }
   }
 
-  .box:hover {
-    outline: 1px solid var(--color-primary_hover);
-  }
-
   .videoResultItem,
   ._0_img-results .item,
   .newsResultItem .newsResultBody .newsResultImage img {
@@ -118,10 +73,6 @@ $footer-bg: #1e2028;
                     rgba(0, 0, 0, 0) 0,
                     rgba(0, 0, 0, 0.6) 100%
     );
-  }
-
-  .clipboardCopy ._0_copied_tooltip {
-    background-color: rgba(13, 13, 14, 0.9);
   }
 
   .sri-group .__dl {
@@ -149,27 +100,28 @@ $footer-bg: #1e2028;
     margin-top: 30px;
   }
 
-  // mobile styles autosuggestions fix
   .mob {
     .auto_item {
       padding: 6px 10px;
     }
 
-    #m_wiki {
-      color: var(--color-secondary-dim_6);
+  }
 
-      .collapse-icon {
-        color: var(--color-primary);
-      }
+  a:focus-visible {
+    outline: 2px solid var(--color-primary_hover);
+    border-radius: 5px;
+  }
 
-      .wiki-content a {
-        text-decoration: underline;
-      }
-    }
+  ._0_rank-icons {
+    margin-top: 0;
+  }
+
+  .box:hover {
+    outline-width: 1px;
   }
 
   .auto_suggestions .auto_suggestions_lenses {
-    border-top: 1px solid var(--color-primary-dim_3);
+    border-top-width: 1px;
     margin-top: 0;
   }
 
@@ -177,6 +129,64 @@ $footer-bg: #1e2028;
   .wikipediaRelatedSection .wikipediaRelatedItems {
     gap: 1.5rem;
     justify-content: start;
+  }
+}
+
+.theme_moon_dark {
+  --background-color: #{$background-color};
+  --footer-bg: #{$footer-bg};
+  --header-bg: #{$header-bg};
+  --control-center-bg: var(--background-color);
+  --filter-dd-bg: var(--background-color);
+  --not-found-bubble-bg: var(--footer-bg);
+
+  --result-item-title-border: var(--background-color);
+  --result-item-title-visited-border: var(--background-color);
+  --result-item-title-border_hover: var(--search-result-title);
+
+  --search-result-date-bg: rgba(255, 255, 255, 0.15);
+  --search-result-date-new-bg: rgba(255, 255, 255, 0.15);
+
+  --cheatsh_background: #{$accent-color};
+  --kagi-accent: #{$accent-color};
+  --tabs-round-bg: #{$accent-color};
+  --dd-hover-bg: #{$accent-color};
+  --inline-widget-bg: #{$widget-bg};
+  --dd-list-input-bg: #{$accent-color};
+  --control-center-dd-list-bg_hover: #{$accent-color};
+  --related-item-bg: #{$accent-color};
+  --btn-group-bg: #{$accent-color};
+  --video-item-bg: #{$accent-color};
+
+  // TODO: work more on colors
+  // doesn't work yet (https://kagifeedback.org/d/1318-custom-css-on-discuss-with-ai-page)
+  //--ai_chat_buble_a_bg: var(--inline-widget-bg); // AI
+  //--ai_chat_buble_q_bg: var(--inline-widget-bg); // You
+
+  --search-result-title: #8ab4f8;
+  --color_link: var(--search-result-title);
+  --color-primary_visited: #c58af9;
+  --search-result-title-hover: var(--search-result-title);
+  --color-primary_hover: var(--search-result-title-hover);
+  --m_sri_gap_color: var(--background-color);
+
+  --site_info_bg: var(--background-color);
+  --site_info_bottom_bg: transparent;
+
+  --btn-primary-color: var(--inline-widget-bg);
+
+  // width overwritten in :root
+  .box:hover {
+    outline: 1px solid var(--color-primary_hover);
+  }
+
+  .clipboardCopy ._0_copied_tooltip {
+    background-color: rgba(13, 13, 14, 0.9);
+  }
+
+  // width overwritten in :root
+  .auto_suggestions .auto_suggestions_lenses {
+    border-top: 1px solid var(--color-primary-dim_3);
   }
 
   .correctedQuery a {
@@ -192,12 +202,22 @@ $footer-bg: #1e2028;
     border-bottom: 1px solid var(--color-primary_visited);
   }
 
-  a:focus-visible {
-    outline: 2px solid var(--color-primary_hover);
-    border-radius: 5px;
-  }
+  .mob {
+    #m_wiki {
+      color: var(--color-secondary-dim_6);
 
-  ._0_rank-icons {
-    margin-top: 0;
+      .collapse-icon {
+        color: var(--color-primary);
+      }
+
+      .wiki-content a {
+        text-decoration: underline;
+      }
+    }
   }
+}
+
+.theme_calm_blue {
+  --m_sri_gap_color: var(--background-color);
+  --quick-search-bg: var(--color-primary-dim_6);
 }
