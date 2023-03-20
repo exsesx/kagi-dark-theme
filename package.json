@@ -8,7 +8,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "style:lint": "stylelint \"**/*.scss\"",
-    "style:compile": "sass --style=compressed kagi_dark.scss"
+    "style:compile": "sass ./src/kagi_dark.scss",
+    "style:compile:min": "sass --style=compressed ./src/kagi_dark.scss"
   },
   "keywords": [],
   "author": "",
