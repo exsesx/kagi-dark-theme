@@ -280,6 +280,9 @@ html[data-path="/discussdoc"] {
   --background-color: #{$background-color};
   --color-primary: rgb(255 255 255);
   --color-primary-dim_5: rgb(255 255 255 / 50%);
+  --color_link: #8ab4f8;
+  --color-primary_hover: #8ab4f8;
+  --color-primary_visited: #c58af9;
 
   // custom variables
   $color-accent: #58a6ff;
@@ -307,7 +310,7 @@ html[data-path="/discussdoc"] {
     }
 
     .q_form_wrapper {
-      padding: 15px 40px;
+      padding: 15px 20px;
       border-top: 1px solid #{$footer-bg};
     }
 
