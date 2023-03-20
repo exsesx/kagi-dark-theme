@@ -1,11 +1,11 @@
-// TODO: filter dropdown inconsistencies (country, order by, time, all/verbatim results)
+@use "sass:color";
 
 // gray default variant (Google-ish)
-//$background-color: #202124;
-//$footer-bg: #171717;
+// $background-color: #202124;
+// $footer-bg: #171717;
 
 $border-radius: 12px;
-$accent-color: rgba(255, 255, 255, 0.1);
+$accent-color: rgb(255 255 255 / 10%);
 
 // brave variant
 $background-color: #17191e;
@@ -17,16 +17,13 @@ $footer-bg: #1e2028;
 :root {
   --search-result-gap: 32px;
 
-  ._0_more_search_box {
-    border-radius: inherit;
+  a:focus-visible {
+    outline: 2px solid var(--color-primary_hover);
+    border-radius: 5px;
   }
 
-  ._0_more_search_user_bangs_list {
-    padding-bottom: 0;
-  }
-
-  ._0_more_search_box_share_button {
-    margin-bottom: 0;
+  .correctedQuery a {
+    color: var(--search-result-title);
   }
 
   .k_ui_dropdown_data_list {
@@ -53,6 +50,35 @@ $footer-bg: #1e2028;
     }
   }
 
+  .__srgi-title a:visited:hover {
+    border-bottom: 1px solid var(--color-primary_visited);
+  }
+
+  .__sri-title .__sri_title_link:visited:hover {
+    color: var(--color-primary_visited);
+    border-bottom: 1px solid var(--color-primary_visited);
+  }
+
+  ._0_more_search_box {
+    border-radius: inherit;
+  }
+
+  ._0_more_search_user_bangs_list {
+    padding-bottom: 0;
+  }
+
+  ._0_more_search_box_share_button {
+    margin-bottom: 0;
+
+    a {
+      color: currentColor;
+    }
+  }
+
+  ._0_img-results .item img {
+    object-fit: cover;
+  }
+
   .videoResultItem,
   ._0_img-results .item,
   .newsResultItem .newsResultBody .newsResultImage img {
@@ -62,25 +88,21 @@ $footer-bg: #1e2028;
   ._0_img-results .item .imageInfo > div.b {
     background: linear-gradient(
                     360deg,
-                    rgba(0, 0, 0, 0.6) 0,
-                    rgba(0, 0, 0, 0) 100%
+                    rgb(0 0 0 / 60%) 0,
+                    rgb(0 0 0 / 0%) 100%
     );
   }
 
   ._0_img-results .item .imageInfo > div.t {
     background: linear-gradient(
                     360deg,
-                    rgba(0, 0, 0, 0) 0,
-                    rgba(0, 0, 0, 0.6) 100%
+                    rgb(0 0 0 / 0%) 0,
+                    rgb(0 0 0 / 60%) 100%
     );
   }
 
   .sri-group .__dl {
     padding-bottom: 0;
-  }
-
-  ._0_img-results .item img {
-    object-fit: cover;
   }
 
   .main-footer {
@@ -104,12 +126,6 @@ $footer-bg: #1e2028;
     .auto_item {
       padding: 6px 10px;
     }
-
-  }
-
-  a:focus-visible {
-    outline: 2px solid var(--color-primary_hover);
-    border-radius: 5px;
   }
 
   ._0_rank-icons {
@@ -130,6 +146,55 @@ $footer-bg: #1e2028;
     gap: 1.5rem;
     justify-content: start;
   }
+
+  .dropdown .dd-list {
+    padding: 0;
+
+    .list_filter_wrpr {
+      position: sticky;
+      background-color: var(--background-color);
+      z-index: 4;
+
+      input.list_filter {
+        padding-right: 35px;
+      }
+
+      ._0_clear_list_filter {
+        right: 25px;
+      }
+    }
+
+    ul {
+      max-height: calc(500px - 55px);
+      overflow-y: auto;
+    }
+
+    ._0_list_items {
+      overflow-y: unset;
+      margin: 0;
+      max-height: unset;
+    }
+  }
+
+  #mm-image {
+    .img-min-max-sub {
+      margin: 10px 0;
+    }
+  }
+
+  ._0_more_search_user_bang_item {
+    transition: unset;
+  }
+
+  // consistent dropdown colors
+  ._0_more_search_user_bang_item._0__active,
+  ._0_more_search_user_bang_item:hover,
+  ._0_more_search_box_customize_button:hover,
+  ._0_more_search_options_box:hover,
+  ._0_more_search_box_share_button:hover {
+    color: var(--dd-hover-color);
+    background-color: var(--dd-hover-bg);
+  }
 }
 
 .theme_moon_dark {
@@ -139,14 +204,11 @@ $footer-bg: #1e2028;
   --control-center-bg: var(--background-color);
   --filter-dd-bg: var(--background-color);
   --not-found-bubble-bg: var(--footer-bg);
-
   --result-item-title-border: var(--background-color);
   --result-item-title-visited-border: var(--background-color);
   --result-item-title-border_hover: var(--search-result-title);
-
-  --search-result-date-bg: rgba(255, 255, 255, 0.15);
-  --search-result-date-new-bg: rgba(255, 255, 255, 0.15);
-
+  --search-result-date-bg: rgb(255 255 255 / 15%);
+  --search-result-date-new-bg: rgb(255 255 255 / 15%);
   --cheatsh_background: #{$accent-color};
   --kagi-accent: #{$accent-color};
   --tabs-round-bg: #{$accent-color};
@@ -157,22 +219,14 @@ $footer-bg: #1e2028;
   --related-item-bg: #{$accent-color};
   --btn-group-bg: #{$accent-color};
   --video-item-bg: #{$accent-color};
-
-  // TODO: work more on colors
-  // doesn't work yet (https://kagifeedback.org/d/1318-custom-css-on-discuss-with-ai-page)
-  //--ai_chat_buble_a_bg: var(--inline-widget-bg); // AI
-  //--ai_chat_buble_q_bg: var(--inline-widget-bg); // You
-
   --search-result-title: #8ab4f8;
   --color_link: var(--search-result-title);
   --color-primary_visited: #c58af9;
   --search-result-title-hover: var(--search-result-title);
   --color-primary_hover: var(--search-result-title-hover);
   --m_sri_gap_color: var(--background-color);
-
   --site_info_bg: var(--background-color);
   --site_info_bottom_bg: transparent;
-
   --btn-primary-color: var(--inline-widget-bg);
 
   // width overwritten in :root
@@ -181,25 +235,12 @@ $footer-bg: #1e2028;
   }
 
   .clipboardCopy ._0_copied_tooltip {
-    background-color: rgba(13, 13, 14, 0.9);
+    background-color: rgb(13 13 14 / 90%);
   }
 
   // width overwritten in :root
   .auto_suggestions .auto_suggestions_lenses {
     border-top: 1px solid var(--color-primary-dim_3);
-  }
-
-  .correctedQuery a {
-    color: var(--search-result-title);
-  }
-
-  .__srgi-title a:visited:hover {
-    border-bottom: 1px solid var(--color-primary_visited);
-  }
-
-  .__sri-title .__sri_title_link:visited:hover {
-    color: var(--color-primary_visited);
-    border-bottom: 1px solid var(--color-primary_visited);
   }
 
   .mob {
@@ -220,6 +261,10 @@ $footer-bg: #1e2028;
 .theme_calm_blue {
   --m_sri_gap_color: var(--background-color);
   --quick-search-bg: var(--color-primary-dim_6);
+  --search-result-title: #1a0dab;
+  --color_link: var(--search-result-title);
+  --color-primary_visited: #681da8;
+  --search-result-title-hover: var(--search-result-title);
 }
 
 // Dark Mode Discuss with AI Page
@@ -228,13 +273,13 @@ html[data-path="/discussdoc"] {
 
   // override variables
   --background-color: #{$background-color};
-  --color-primary: rgb(255, 255, 255);
-  --color-primary-dim_5: rgba(255, 255, 255, 0.5);
+  --color-primary: rgb(255 255 255);
+  --color-primary-dim_5: rgb(255 255 255 / 50%);
 
   // custom variables
   $color-accent: #58a6ff;
 
-  --ai_chat_buble_q_bg: #{darken($color-accent, 20%)};
+  --ai_chat_buble_q_bg: #{color.adjust($color-accent, $lightness: -20%)};
   --ai_chat_buble_q_text: var(--color-primary);
   --ai_chat_buble_a_bg: #{$widget-bg};
   --ai_chat_buble_a_text: var(--color-primary);
@@ -242,8 +287,8 @@ html[data-path="/discussdoc"] {
   --ai_chat_input_button: var(--color-primary-dim_5);
 
   .closeBtn {
-    background: rgb(229, 229, 229); // primary
-    color: rgb(25, 25, 25); // secondary
+    background: rgb(229 229 229); // primary
+    color: rgb(25 25 25); // secondary
   }
 
   .question_form_box {
