@@ -145,6 +145,10 @@ $footer-bg: #1e2028;
   .wikipediaRelatedSection .wikipediaRelatedItems {
     gap: 1.5rem;
     justify-content: start;
+
+    a:hover {
+      color: var(--wiki-content-links);
+    }
   }
 
   .dropdown .dd-list {
@@ -224,6 +228,7 @@ $footer-bg: #1e2028;
   --color-primary_visited: #c58af9;
   --search-result-title-hover: var(--search-result-title);
   --color-primary_hover: var(--search-result-title-hover);
+  --wiki-content-links: var(--search-result-title);
   --m_sri_gap_color: var(--background-color);
   --site_info_bg: var(--background-color);
   --site_info_bottom_bg: transparent;
