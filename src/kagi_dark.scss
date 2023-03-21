@@ -134,6 +134,7 @@ $footer-bg: #1e2028;
 
   .box:hover {
     outline-width: 1px;
+    outline-color: var(--color-primary_hover);
   }
 
   .auto_suggestions .auto_suggestions_lenses {
@@ -233,11 +234,8 @@ $footer-bg: #1e2028;
   --site_info_bg: var(--background-color);
   --site_info_bottom_bg: transparent;
   --btn-primary-color: var(--inline-widget-bg);
-
-  // width overwritten in :root
-  .box:hover {
-    outline: 1px solid var(--color-primary_hover);
-  }
+  --quick-search-bg: var(--color-primary-dim_9);
+  --quick-search-icon: var(--color-secondary);
 
   .clipboardCopy ._0_copied_tooltip {
     background-color: rgb(13 13 14 / 90%);
@@ -273,6 +271,9 @@ $footer-bg: #1e2028;
 }
 
 // Dark Mode Discuss with AI Page
+// FIXME: Scroll down and then up not enough, triggers second scroll bar (probably fixed by overflow: hidden on _0_ai_answers_box)
+// FIXME: Font size for mobile is a little too big
+// FIXME: Doesn't respect color-scheme, always dark mode
 html[data-path="/discussdoc"] {
   color-scheme: dark;
 
@@ -303,6 +304,10 @@ html[data-path="/discussdoc"] {
     padding: 0;
     margin: 0;
 
+    ._0_chat_box_item_bubble {
+      overflow: hidden;
+    }
+
     ._0_ai_answer_wrapper {
       padding: 20px;
       max-height: calc(100% - 101px);
@@ -321,6 +326,7 @@ html[data-path="/discussdoc"] {
 
     ._0_ai_answers_box {
       padding: 0;
+      overflow: hidden;
     }
   }
 }
