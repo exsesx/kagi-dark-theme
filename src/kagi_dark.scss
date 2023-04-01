@@ -16,6 +16,8 @@ $footer-bg: #1e2028;
 // Common Styles for All Themes
 :root {
   --search-result-gap: 32px;
+  --font-mono: MonoLisa, monospace;
+  --font-code: MonoLisa, Monaco, monospace;
 
   a:focus-visible {
     outline: 2px solid var(--color-primary_hover);
