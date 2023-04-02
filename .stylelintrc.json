@@ -1,10 +1,14 @@
 {
-  "extends": ["stylelint-config-standard-scss"],
+  "extends": [
+    "stylelint-config-standard-scss"
+  ],
   "rules": {
     "selector-class-pattern": null,
     "custom-property-pattern": null,
     "selector-id-pattern": null,
     "no-descending-specificity": null,
-    "value-keyword-case": null
+    "value-keyword-case": null,
+    "scss/double-slash-comment-whitespace-inside": null,
+    "scss/comment-no-empty": null
   }
 }

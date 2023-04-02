@@ -31,7 +31,6 @@ $footer-bg: #1e2028;
   .k_ui_dropdown_data_list {
     padding: 0;
     border-radius: $border-radius;
-    top: 28px !important;
 
     .list_items {
       border-radius: $border-radius;
@@ -154,34 +153,35 @@ $footer-bg: #1e2028;
     }
   }
 
-  .dropdown .dd-list {
-    padding: 0;
-
-    .list_filter_wrpr {
-      position: sticky;
-      background-color: var(--background-color);
-      z-index: 4;
-
-      input.list_filter {
-        padding-right: 35px;
-      }
-
-      ._0_clear_list_filter {
-        right: 25px;
-      }
-    }
-
-    ul {
-      max-height: calc(500px - 55px);
-      overflow-y: auto;
-    }
-
-    ._0_list_items {
-      overflow-y: unset;
-      margin: 0;
-      max-height: unset;
-    }
-  }
+  // FIXME: works in desktop, but not in mobile
+  //.dropdown .dd-list {
+  //  padding: 0;
+  //
+  //  .list_filter_wrpr {
+  //    position: sticky;
+  //    background-color: var(--background-color);
+  //    z-index: 4;
+  //
+  //    input.list_filter {
+  //      padding-right: 35px;
+  //    }
+  //
+  //    ._0_clear_list_filter {
+  //      right: 25px;
+  //    }
+  //  }
+  //
+  //  ul {
+  //    max-height: calc(500px - 55px);
+  //    overflow-y: auto;
+  //  }
+  //
+  //  ._0_list_items {
+  //    overflow-y: unset;
+  //    margin: 0;
+  //    max-height: unset;
+  //  }
+  //}
 
   #mm-image {
     .img-min-max-sub {
