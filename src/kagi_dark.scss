@@ -4,14 +4,16 @@ $border-radius: 12px;
 $accent-color: rgb(255 255 255 / 10%);
 
 // Gray Google-ish variant
-// $background-color: #202124;
-// $footer-bg: #171717;
+$background-color: #202124;
+$header-bg: $background-color;
+$widget-bg: #303134;
+$footer-bg: #171717;
 
 // Brave-ish variant
-$background-color: #17191e;
-$header-bg: #1a1c23;
-$widget-bg: #1e2028;
-$footer-bg: #1e2028;
+//$background-color: #17191e;
+//$header-bg: #1a1c23;
+//$widget-bg: #1e2028;
+//$footer-bg: #1e2028;
 
 // Common styles
 :root {
