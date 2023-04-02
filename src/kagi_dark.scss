@@ -1,19 +1,19 @@
 @use "sass:color";
 
-// gray default variant (Google-ish)
-// $background-color: #202124;
-// $footer-bg: #171717;
-
 $border-radius: 12px;
 $accent-color: rgb(255 255 255 / 10%);
 
-// brave variant
+// Gray Google-ish variant
+// $background-color: #202124;
+// $footer-bg: #171717;
+
+// Brave-ish variant
 $background-color: #17191e;
 $header-bg: #1a1c23;
 $widget-bg: #1e2028;
 $footer-bg: #1e2028;
 
-// Common Styles for All Themes
+// Common styles
 :root {
   --search-result-gap: 32px;
   --font-mono: MonoLisa, monospace;
@@ -143,7 +143,6 @@ $footer-bg: #1e2028;
     margin-top: 0;
   }
 
-  // justify-content: space-between; makes spacing a little bit off...
   .wikipediaRelatedSection .wikipediaRelatedItems {
     gap: 1.5rem;
     justify-content: start;
@@ -152,36 +151,6 @@ $footer-bg: #1e2028;
       color: var(--wiki-content-links);
     }
   }
-
-  // FIXME: works in desktop, but not in mobile
-  //.dropdown .dd-list {
-  //  padding: 0;
-  //
-  //  .list_filter_wrpr {
-  //    position: sticky;
-  //    background-color: var(--background-color);
-  //    z-index: 4;
-  //
-  //    input.list_filter {
-  //      padding-right: 35px;
-  //    }
-  //
-  //    ._0_clear_list_filter {
-  //      right: 25px;
-  //    }
-  //  }
-  //
-  //  ul {
-  //    max-height: calc(500px - 55px);
-  //    overflow-y: auto;
-  //  }
-  //
-  //  ._0_list_items {
-  //    overflow-y: unset;
-  //    margin: 0;
-  //    max-height: unset;
-  //  }
-  //}
 
   #mm-image {
     .img-min-max-sub {
@@ -204,6 +173,7 @@ $footer-bg: #1e2028;
   }
 }
 
+// Override dark theme
 .theme_moon_dark {
   --background-color: #{$background-color};
   --footer-bg: #{$footer-bg};
@@ -263,6 +233,7 @@ $footer-bg: #1e2028;
   }
 }
 
+// Override light theme
 .theme_calm_blue {
   --m_sri_gap_color: var(--background-color);
   --quick-search-bg: var(--color-primary-dim_6);
@@ -272,14 +243,12 @@ $footer-bg: #1e2028;
   --search-result-title-hover: var(--search-result-title);
 }
 
-// Dark Mode Discuss with AI Page
-// FIXME: Scroll down and then up not enough, triggers second scroll bar (probably fixed by overflow: hidden on _0_ai_answers_box)
-// FIXME: Font size for mobile is a little too big
-// FIXME: Doesn't respect color-scheme, always dark mode
+// Dark mode discuss with AI page
+// FIXME: overriding light mode, because it's the only one available by Kagi
 html[data-path="/discussdoc"] {
   color-scheme: dark;
 
-  // override variables
+  // existing variables
   --background-color: #{$background-color};
   --color-primary: rgb(255 255 255);
   --color-primary-dim_5: rgb(255 255 255 / 50%);
@@ -298,37 +267,7 @@ html[data-path="/discussdoc"] {
   --ai_chat_input_button: var(--color-primary-dim_5);
 
   .closeBtn {
-    background: rgb(229 229 229); // primary
-    color: rgb(25 25 25); // secondary
-  }
-
-  .question_form_box {
-    padding: 0;
-    margin: 0;
-
-    ._0_chat_box_item_bubble {
-      overflow: hidden;
-    }
-
-    ._0_ai_answer_wrapper {
-      padding: 20px;
-      max-height: calc(100% - 101px);
-      overflow: auto;
-    }
-
-    .q_form_wrapper {
-      padding: 15px 20px;
-      border-top: 1px solid #{$footer-bg};
-    }
-
-    ._0_q_form_box {
-      padding: 0 3px;
-      background-color: #{$widget-bg};
-    }
-
-    ._0_ai_answers_box {
-      padding: 0;
-      overflow: hidden;
-    }
+    color: var(--color-primary);
+    background: none;
   }
 }
