@@ -33,6 +33,7 @@ $footer-bg: #171717;
   .k_ui_dropdown_data_list {
     padding: 0;
     border-radius: $border-radius;
+    top: 100% !important;
 
     .list_items {
       border-radius: $border-radius;
@@ -230,6 +231,15 @@ $footer-bg: #171717;
       .wiki-content a {
         text-decoration: underline;
       }
+    }
+  }
+
+  // podcasts icon color fix
+  .serp-nav ._0_item.n_ne svg {
+    color: var(--color-primary);
+
+    & > path {
+      fill: currentColor;
     }
   }
 }
