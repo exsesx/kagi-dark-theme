@@ -235,6 +235,14 @@ $footer-bg: #171717;
   }
 
   // podcasts icon color fix
+  .headerPodcasts i svg {
+    color: var(--color-primary);
+
+    & > path {
+      fill: currentColor;
+    }
+  }
+
   .serp-nav ._0_item.n_ne svg {
     color: var(--color-primary);
 
