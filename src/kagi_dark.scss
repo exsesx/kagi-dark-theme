@@ -250,7 +250,7 @@ $footer-bg: #171717;
 html[data-path="/discussdoc"] {
   color-scheme: dark;
 
-  // existing variables
+  // override variables
   --background-color: #{$background-color};
   --color-primary: rgb(255 255 255);
   --color-primary-dim_5: rgb(255 255 255 / 50%);
